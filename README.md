@@ -1,13 +1,13 @@
 # Honestbee DevOps Onboarding Guide
 
-This repository contains materials for to assist onboarding of engineers in the DevOps team of Honestbee. However, all source code and information contained in here is free to use and share for anyone outside of our organisation.
+This repository contains materials to assist onboarding of engineers in the DevOps team of Honestbee. All information herein is free to use and share for anyone outside of our organisation.
 
 Guides and exercises here are intended to be followed in a _local development environment_ not on any actual cloud infrastructure.
 
 ## Development Environment
 
-- You need a modern text editor or IDE capable of editing any type of text file
-- Choice is up to preference, if unsure, use [Visual Studio Code][6]
+- You need a modern text editor or IDE supporting advanced editing and highlighting for various languages
+- Choice is up to preference - if unsure, use [Visual Studio Code][6]
 - You will be using the terminal a lot
 
 ## Tasks

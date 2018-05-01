@@ -23,30 +23,41 @@ curl localhost:8000
 
 ## Kubernetes Manifest
 
-- Deployment for the actual pods
-- Service to expose the pods to the world
-- Using `NodePort` to expose it outside the cluster
-- To start:
+To get a working application in k8s at the minimum we need the following:
+
+- A [Deployment][1] for the actual pods
+- A [Service][2] to expose the pods to the world (we'll use `NodePort` to expose it)
+
+Take a look at the sample manifest in `kubernetes/manifest.yaml`. To deploy it to Kubernetes:
 
 ```sh
 kubectl apply -f kubernetes/manifest.yaml
 ```
 
-- Watch pod status as they are being created:
+Watch pod status as they are being created:
 
 ```sh
 watch kubectl get pod
 ```
 
-- Node ports are automatically forwarded when using Docker for Mac
-- To query the service (once every 2 seconds, observe change of hostname)
+Node ports are automatically forwarded when using Docker for Mac. To query the service (once every
+2 seconds, observe change of hostname)
 
 ```sh
 watch curl localhost:30000
 ```
 
-- Kill a single pod, watch it coming back:
+Kill a single pod, watch it coming back:
 
 ```sh
 kubectl delete pod <pod_name>
 ```
+
+Delete the resources created by your manifest:
+
+```sh
+kubectl delete -f kubernetes/manifest.yaml
+```
+
+[1]:https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+[2]:https://kubernetes.io/docs/concepts/services-networking/service/
